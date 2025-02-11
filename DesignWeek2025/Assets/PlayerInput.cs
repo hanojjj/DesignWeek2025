@@ -30,18 +30,32 @@ public class PlayerInput : MonoBehaviour
     private float jumpBufferCounter;
     //Sprite Renderer
     private SpriteRenderer spriteRenderer;
-
+    //Interacting
+    bool canInteract;
+    public static GameObject hammer;
+    bool isHammerHeld;
+    //Health
+    public int playerHealth = 10;
 
     private void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        hammer = GameObject.FindGameObjectWithTag("Hammer");
     }
 
     // Update is called once per frame
     void Update()
     {
+        //interaction
+        if (Input.GetButtonDown("Fire1") && canInteract)
+        {
+            isHammerHeld = true;
+            canInteract = false;
+            hammer.SetActive(false);
+            Debug.Log("Interacting");
+        }
+
         #region Run Variables
         //calculate the desired top speed
         float topSpeed = moveInput.x * moveSpeed;
@@ -70,10 +84,12 @@ public class PlayerInput : MonoBehaviour
         if (playerRB.velocity.x < 0f)
         {
             spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         if (playerRB.velocity.x > 0f)
         {
             spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
         }
         //Jump
         if (isGrounded())
@@ -114,6 +130,14 @@ public class PlayerInput : MonoBehaviour
         {
             playerRB.gravityScale = gravityScale;
         }
+
+        //Death
+
+        if (playerHealth <= 0)
+        {
+            //Death logic goes here
+            Debug.Log("Player Died");
+        }
     }
 
     public bool isGrounded()
@@ -132,4 +156,13 @@ public class PlayerInput : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Hammer")
+        {
+            canInteract = true;
+        }
+    }
+
 }
