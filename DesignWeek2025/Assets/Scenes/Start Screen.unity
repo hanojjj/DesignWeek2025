@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 117586925}
   - component: {fileID: 117586924}
   - component: {fileID: 117586923}
+  - component: {fileID: 117586926}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -274,6 +275,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117586921}
   m_CullTransparentMesh: 1
+--- !u!114 &117586926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117586921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51410c7ee6f71f40b5a273b5fb2e615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGame: {fileID: 117586923}
+  gameScene: SampleScene
 --- !u!1 &231243840
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +435,7 @@ GameObject:
   - component: {fileID: 250861518}
   - component: {fileID: 250861517}
   - component: {fileID: 250861516}
+  - component: {fileID: 250861519}
   m_Layer: 5
   m_Name: Highscores
   m_TagString: Untagged
@@ -529,6 +545,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250861514}
   m_CullTransparentMesh: 1
+--- !u!114 &250861519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250861514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca6a220f0185a147b16e6259107ca19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &364537676
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +729,7 @@ GameObject:
   - component: {fileID: 865549054}
   - component: {fileID: 865549053}
   - component: {fileID: 865549052}
+  - component: {fileID: 865549055}
   m_Layer: 5
   m_Name: Exit Game
   m_TagString: Untagged
@@ -810,6 +839,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865549050}
   m_CullTransparentMesh: 1
+--- !u!114 &865549055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865549050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4168d6e1e999a104dbf32e91e91337f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &884008734
 GameObject:
   m_ObjectHideFlags: 0
