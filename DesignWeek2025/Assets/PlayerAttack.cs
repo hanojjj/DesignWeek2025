@@ -14,21 +14,35 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange;
     public LayerMask findEnemyPlayer;
 
-    public PlayerInput thisPlayer;
+    public static PlayerInput thisPlayer;
+
+    public int damageAmount = 5;
+
+    private void Awake()
+    {
+        thisPlayer = GetComponent<PlayerInput>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (attackTimer <= 0)
+        if (attackTimer >= 0)
         {
             //attack functionality
             if (Input.GetButtonDown("Fire2"))
             {
                 Debug.Log("Attacking");
                 Collider2D[] enemyPlayer = Physics2D.OverlapCircleAll(attackPos.position, attackRange, findEnemyPlayer);
-                for (int i = 0; i < enemyPlayer.Length; i++) 
+                for (int i = 0; i < enemyPlayer.Length; i++)
                 {
-                    enemyPlayer[i].GetComponent<PlayerInput>().playerHealth -= 10;
+                    if (thisPlayer.isHammerHeld == true)
+                    {
+                        enemyPlayer[i].GetComponent<Player2Input>().playerHealth -= 10;
+                    }
+                    else
+                    {
+                        enemyPlayer[i].GetComponent<Player2Input>().isHammerHeld = false; 
+                    }
                     Debug.Log("Attacking");
                 }
             }

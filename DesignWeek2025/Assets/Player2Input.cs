@@ -33,15 +33,18 @@ public class Player2Input : MonoBehaviour
     //Interacting
     bool canInteract;
     public static GameObject hammer;
-    bool isHammerHeld;
+    public bool isHammerHeld;
     //Health
     public int playerHealth = 10;
+
+    public static PlayerInput p1;
 
     private void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         hammer = GameObject.FindGameObjectWithTag("Hammer");
+        p1 = GameObject.FindObjectOfType<PlayerInput>();
     }
 
     // Update is called once per frame
@@ -54,6 +57,10 @@ public class Player2Input : MonoBehaviour
             canInteract = false;
             hammer.SetActive(false);
             Debug.Log("Interacting");
+        }
+        if (isHammerHeld == false && p1.isHammerHeld == false)
+        {
+            hammer.SetActive(true);
         }
 
         #region Run Variables
