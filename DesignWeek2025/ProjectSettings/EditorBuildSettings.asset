@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TestVictory1.unity
+    guid: 31811e05e31fed548a8dabccadce008b
+  - enabled: 1
+    path: Assets/Scenes/TestVictory2.unity
+    guid: 8291551bb4c303d47b37186c02461f82
+  - enabled: 1
+    path: Assets/Scenes/TestDraw.unity
+    guid: 7be0369621d6f7642a84db0448734e8d
   m_configObjects: {}
