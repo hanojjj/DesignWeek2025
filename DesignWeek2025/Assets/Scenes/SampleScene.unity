@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 231149879}
   - component: {fileID: 231149878}
   - component: {fileID: 231149877}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 388926855}
   - component: {fileID: 388926854}
   - component: {fileID: 388926853}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,9 +552,10 @@ MonoBehaviour:
   boxSize: {x: 1.26, y: 0.27}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
   coyoteTimer: 0.2
   jumpBufferTimer: 0.2
+  isHammerHeld: 0
   playerHealth: 10
 --- !u!50 &1234327164
 Rigidbody2D:
@@ -714,8 +715,9 @@ MonoBehaviour:
   attackRange: 0.71
   findEnemyPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   thisPlayer: {fileID: 1234327163}
+  damageAmount: 5
 --- !u!61 &1234327169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -776,7 +778,7 @@ GameObject:
   - component: {fileID: 1471520091}
   - component: {fileID: 1471520090}
   - component: {fileID: 1471520089}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,6 +850,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   thisPlayer: {fileID: 1471520091}
+  damageAmount: 5
 --- !u!114 &1471520091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +879,7 @@ MonoBehaviour:
     m_Bits: 8
   coyoteTimer: 0.2
   jumpBufferTimer: 0.2
+  isHammerHeld: 0
   playerHealth: 10
 --- !u!61 &1471520092
 BoxCollider2D:
