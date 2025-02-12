@@ -18,6 +18,9 @@ public class PlayerAttack : MonoBehaviour
 
     public int damageAmount = 5;
 
+    public float knockbackStrength;
+    public static Rigidbody2D enemyRB;
+
     private void Awake()
     {
         thisPlayer = GetComponent<PlayerInput>();
@@ -41,7 +44,12 @@ public class PlayerAttack : MonoBehaviour
                     }
                     else
                     {
-                        enemyPlayer[i].GetComponent<Player2Input>().isHammerHeld = false; 
+                        enemyPlayer[i].GetComponent<Player2Input>().isHammerHeld = false;
+                        //calculate knockback
+                        enemyRB = enemyPlayer[i].GetComponent<Rigidbody2D>();
+                        Vector2 direction = (enemyPlayer[i].gameObject.transform.position - transform.position).normalized;
+                        Vector2 knockback = direction * knockbackStrength;
+                        enemyRB.AddForce(knockback, ForceMode2D.Impulse);
                     }
                     Debug.Log("Attacking");
                 }
