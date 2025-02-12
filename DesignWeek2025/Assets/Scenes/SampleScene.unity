@@ -443,7 +443,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.547647
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -468,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 706151240}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 1.42, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -540,8 +540,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  acceleration: 0.7
-  deceleration: 2
+  acceleration: 7
+  deceleration: 7
   velocityPower: 0.7
   frictionAmount: 0.2
   moveInput: {x: 0, y: 0}
@@ -716,8 +716,8 @@ MonoBehaviour:
   findEnemyPlayer:
     serializedVersion: 2
     m_Bits: 128
-  thisPlayer: {fileID: 1234327163}
   damageAmount: 5
+  knockbackStrength: 25
 --- !u!61 &1234327169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -849,8 +849,8 @@ MonoBehaviour:
   findEnemyPlayer:
     serializedVersion: 2
     m_Bits: 64
-  thisPlayer: {fileID: 1471520091}
   damageAmount: 5
+  knockbackStrength: 25
 --- !u!114 &1471520091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,8 +864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  acceleration: 0.7
-  deceleration: 2
+  acceleration: 7
+  deceleration: 7
   velocityPower: 0.7
   frictionAmount: 0.2
   moveInput: {x: 0, y: 0}

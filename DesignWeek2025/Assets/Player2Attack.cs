@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 public class Player2Attack : MonoBehaviour
@@ -15,6 +16,10 @@ public class Player2Attack : MonoBehaviour
     public static Player2Input thisPlayer;
 
     public int damageAmount = 5;
+
+    //knockback
+    public float knockbackStrength;
+    public static Rigidbody2D enemyRB;
 
     private void Awake()
     {
@@ -39,7 +44,13 @@ public class Player2Attack : MonoBehaviour
                     }
                     else
                     {
+                        
                         enemyPlayer[i].GetComponent<PlayerInput>().isHammerHeld = false;
+                        //calculate knockback
+                        enemyRB = enemyPlayer[i].GetComponent<Rigidbody2D>();
+                        Vector2 direction = (enemyPlayer[i].gameObject.transform.position - transform.position).normalized;
+                        Vector2 knockback = direction * knockbackStrength;
+                        enemyRB.AddForce(knockback, ForceMode2D.Impulse);
                     }
                     Debug.Log("Attacking");
                 }
