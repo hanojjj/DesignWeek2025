@@ -103,7 +103,6 @@ public class PlayerInput : MonoBehaviour
             if (Time.time > switchInterval)
             {
                 
-
                 isSprite1Active = !isSprite1Active;
 
                 if (isSprite1Active)

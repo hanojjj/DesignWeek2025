@@ -16,21 +16,32 @@ public class PlayerAttack : MonoBehaviour
 
     public PlayerInput thisPlayer;
 
+    //sprite renderer
+    private SpriteRenderer spriteRenderer;
+    public Sprite attackSprite1;
+    public Sprite attackSprite2;
+    public Sprite originalSprite;
+    //private bool isSprite1Active = true;
+   // private float switchInterval = 0.50f;
+    private bool isAttacking;
+
     // Update is called once per frame
     void Update()
     {
         if (attackTimer <= 0)
         {
             //attack functionality
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2") && !isAttacking)
             {
                 Debug.Log("Attacking");
                 Collider2D[] enemyPlayer = Physics2D.OverlapCircleAll(attackPos.position, attackRange, findEnemyPlayer);
-                for (int i = 0; i < enemyPlayer.Length; i++) 
+                for (int i = 0; i < enemyPlayer.Length; i++)
                 {
                     enemyPlayer[i].GetComponent<PlayerInput>().playerHealth -= 10;
                     Debug.Log("Attacking");
                 }
+
+                StartCoroutine(Attack());
             }
             attackTimer = startAttackTime;
         }
@@ -42,6 +53,26 @@ public class PlayerAttack : MonoBehaviour
 
 
     }
+
+
+    private IEnumerator Attack()
+    {
+        isAttacking = true;
+
+        // Change to the first attack sprite
+        spriteRenderer.sprite = attackSprite1;
+        yield return new WaitForSeconds(0.1f); // Wait for 0.1 seconds
+
+        // Change to the second attack sprite
+        spriteRenderer.sprite = attackSprite2;
+        yield return new WaitForSeconds(0.1f); // Wait for 0.1 seconds
+
+        // Change back to the original sprite
+        spriteRenderer.sprite = originalSprite;
+
+        isAttacking = false;
+    }
+
 
     private void OnDrawGizmosSelected()
     {
