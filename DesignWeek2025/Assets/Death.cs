@@ -18,9 +18,9 @@ public class Death : MonoBehaviour
 
     //Scores
     [SerializeField]
-    private FloatSO P1Score;
+    public FloatSO P1Score;
     [SerializeField]
-    private FloatSO P2Score;
+    public FloatSO P2Score;
 
     //Players
     public static PlayerInput p1;
