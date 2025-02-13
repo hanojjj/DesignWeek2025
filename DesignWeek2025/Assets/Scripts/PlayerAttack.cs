@@ -14,7 +14,17 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange;
     public LayerMask findEnemyPlayer;
 
-    public PlayerInput thisPlayer;
+    public static PlayerInput thisPlayer;
+
+    public int damageAmount = 5;
+
+    public float knockbackStrength;
+    public static Rigidbody2D enemyRB;
+
+    private void Awake()
+    {
+        thisPlayer = GetComponent<PlayerInput>();
+    }
 
     //sprite renderer
     private SpriteRenderer spriteRenderer;
@@ -28,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attackTimer <= 0)
+        if (attackTimer >= 0)
         {
             //attack functionality
             if (Input.GetButtonDown("Fire2") && !isAttacking)
@@ -37,7 +47,19 @@ public class PlayerAttack : MonoBehaviour
                 Collider2D[] enemyPlayer = Physics2D.OverlapCircleAll(attackPos.position, attackRange, findEnemyPlayer);
                 for (int i = 0; i < enemyPlayer.Length; i++)
                 {
-                    enemyPlayer[i].GetComponent<PlayerInput>().playerHealth -= 10;
+                    if (thisPlayer.isHammerHeld == true)
+                    {
+                        enemyPlayer[i].GetComponent<Player2Input>().playerHealth -= 10;
+                    }
+                    else
+                    {
+                        enemyPlayer[i].GetComponent<Player2Input>().isHammerHeld = false;
+                        //calculate knockback
+                        enemyRB = enemyPlayer[i].GetComponent<Rigidbody2D>();
+                        Vector2 direction = (enemyPlayer[i].gameObject.transform.position - transform.position).normalized;
+                        Vector2 knockback = direction * knockbackStrength;
+                        enemyRB.AddForce(knockback, ForceMode2D.Impulse);
+                    }
                     Debug.Log("Attacking");
                 }
 

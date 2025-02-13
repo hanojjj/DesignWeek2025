@@ -37,15 +37,18 @@ public class PlayerInput : MonoBehaviour
     //Interacting
     bool canInteract;
     public static GameObject hammer;
-    bool isHammerHeld;
+    public bool isHammerHeld;
     //Health
     public int playerHealth = 10;
+
+    public static Player2Input p2;
 
     private void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         hammer = GameObject.FindGameObjectWithTag("Hammer");
+        p2 = GameObject.FindObjectOfType<Player2Input>();
     }
 
     // Update is called once per frame
@@ -59,7 +62,10 @@ public class PlayerInput : MonoBehaviour
             hammer.SetActive(false);
             Debug.Log("Interacting");
         }
-
+        if (isHammerHeld == false && p2.isHammerHeld == false)
+        {
+            hammer.SetActive(true);
+        }
         #region Run Variables
         //calculate the desired top speed
         float topSpeed = moveInput.x * moveSpeed;
