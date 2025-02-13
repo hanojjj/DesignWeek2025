@@ -555,6 +555,8 @@ MonoBehaviour:
     m_Bits: 8
   coyoteTimer: 0.2
   jumpBufferTimer: 0.2
+  sprite1: {fileID: 21300000, guid: 89ca6479892994ebf9e6ff640f3e98dc, type: 3}
+  sprite2: {fileID: 21300000, guid: 1a265201705694d77b4a4a93c0b0a020, type: 3}
   isHammerHeld: 0
   playerHealth: 10
 --- !u!50 &1234327164
@@ -625,8 +627,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.745, g: 0.148255, b: 0.148255, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4155a98c7a641441ebd1f83d2f06d68f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -645,7 +647,7 @@ Transform:
   m_GameObject: {fileID: 1234327162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.84, y: -2.2, z: 0}
+  m_LocalPosition: {x: -5.84, y: -1.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -688,7 +690,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -718,6 +720,11 @@ MonoBehaviour:
     m_Bits: 128
   damageAmount: 5
   knockbackStrength: 25
+  attackHammerSprite1: {fileID: 21300000, guid: 55a103f19bb394c4c9a7ef6f5231aca7, type: 3}
+  attackHammerSprite2: {fileID: 21300000, guid: 292d2269d17fd4cacb9b0a0cde9660e2, type: 3}
+  attackSprite1: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  attackSprite2: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  originalSprite: {fileID: 21300000, guid: 89ca6479892994ebf9e6ff640f3e98dc, type: 3}
 --- !u!61 &1234327169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -754,7 +761,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -808,7 +815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels: 00000000010000000200000003000000
-  timeRemaining: 5
+  firstLevelSlot: 0
+  timeRemaining: 30
   P1Score: {fileID: 11400000, guid: c044a79147f38bb488742f4bd7719f51, type: 2}
   P2Score: {fileID: 11400000, guid: dc31a949bd33abe489c4b501b7d99cc2, type: 2}
 --- !u!1 &1471520088

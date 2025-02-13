@@ -14,7 +14,7 @@ public class Death : MonoBehaviour
     public int firstLevelSlot;
 
     //Time remaining on the timer
-    public float timeRemaining = 30;
+    public float timeRemaining = 30f;
 
     //Scores
     [SerializeField]
@@ -41,7 +41,7 @@ public class Death : MonoBehaviour
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
-            Debug.Log(timeRemaining);
+            //Debug.Log(timeRemaining);
         }
         //Timeout
         if (timeRemaining <= 0)

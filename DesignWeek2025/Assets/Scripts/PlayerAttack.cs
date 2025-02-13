@@ -28,12 +28,21 @@ public class PlayerAttack : MonoBehaviour
 
     //sprite renderer
     private SpriteRenderer spriteRenderer;
+    public Sprite attackHammerSprite1;
+    public Sprite attackHammerSprite2;
     public Sprite attackSprite1;
     public Sprite attackSprite2;
     public Sprite originalSprite;
-    //private bool isSprite1Active = true;
-   // private float switchInterval = 0.50f;
+    private bool isSprite1Active = true;
+    private float switchInterval = 0.50f;
     private bool isAttacking;
+
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the SpriteRenderer
+        spriteRenderer.sprite = originalSprite; // Set the original sprite initially
+    }
 
     // Update is called once per frame
     void Update()
@@ -50,6 +59,8 @@ public class PlayerAttack : MonoBehaviour
                     if (thisPlayer.isHammerHeld == true)
                     {
                         enemyPlayer[i].GetComponent<Player2Input>().playerHealth -= 10;
+                        
+
                     }
                     else
                     {
@@ -63,8 +74,19 @@ public class PlayerAttack : MonoBehaviour
                     Debug.Log("Attacking");
                 }
 
-                StartCoroutine(Attack());
+                
             }
+
+            if (Input.GetButtonDown("Fire2") && thisPlayer.isHammerHeld == true)
+            {
+                StartCoroutine(AttackWithHammer());
+            }
+            else if (Input.GetButtonDown("Fire2") && thisPlayer.isHammerHeld == false)
+            {
+                StartCoroutine(AttackWithoutHammer());
+            }
+
+
             attackTimer = startAttackTime;
         }
         else
@@ -76,8 +98,25 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+    private IEnumerator AttackWithHammer()
+    {
+        isAttacking = true;
 
-    private IEnumerator Attack()
+        // Change to the first attack sprite
+        spriteRenderer.sprite = attackHammerSprite1;
+        yield return new WaitForSeconds(0.1f); // Wait for 0.1 seconds
+
+        // Change to the second attack sprite
+        spriteRenderer.sprite = attackHammerSprite2;
+        yield return new WaitForSeconds(0.1f); // Wait for 0.1 seconds
+
+        // Change back to the original sprite
+        spriteRenderer.sprite = originalSprite;
+
+        isAttacking = false;
+    }
+
+    private IEnumerator AttackWithoutHammer()
     {
         isAttacking = true;
 
@@ -94,7 +133,6 @@ public class PlayerAttack : MonoBehaviour
 
         isAttacking = false;
     }
-
 
     private void OnDrawGizmosSelected()
     {
