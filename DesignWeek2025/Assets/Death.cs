@@ -52,6 +52,8 @@ public class Death : MonoBehaviour
                 if (P1Score.Value == 3)
                 {
                     SceneManager.LoadScene(1);
+                    P1Score.Value = 0;
+                    P2Score.Value = 0;
                 }
                 else
                 {
@@ -65,6 +67,8 @@ public class Death : MonoBehaviour
                 if (P2Score.Value == 3)
                 {
                     SceneManager.LoadScene(2);
+                    P1Score.Value = 0;
+                    P2Score.Value = 0;
                 }
                 else
                 {
@@ -84,6 +88,8 @@ public class Death : MonoBehaviour
             if (P2Score.Value == 3)
             {
                 SceneManager.LoadScene(2);
+                P1Score.Value = 0;
+                P2Score.Value = 0;
             }
             else
             {
@@ -97,6 +103,8 @@ public class Death : MonoBehaviour
             if (P1Score.Value == 3)
             {
                 SceneManager.LoadScene(1);
+                P1Score.Value = 0;
+                P2Score.Value = 0;
             }
             else
             {
