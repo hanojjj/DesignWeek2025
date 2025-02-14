@@ -92,13 +92,13 @@ public class Player2Input : MonoBehaviour
         //move character P2 Horizontally
         playerRB.AddForce(movement * Vector2.right);
         //flip sprite
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxisRaw("P2 Horizontal") < 0)
         {
             spriteRenderer.flipX = spriteRenderer.flipX;
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetAxisRaw("P2 Horizontal") > 0)
         {
             spriteRenderer.flipX = spriteRenderer.flipX;
             transform.localScale = new Vector3(1, 1, 1);

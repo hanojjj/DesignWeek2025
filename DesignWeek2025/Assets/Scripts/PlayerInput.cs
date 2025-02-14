@@ -91,13 +91,13 @@ public class PlayerInput : MonoBehaviour
         //move character horizontally
         playerRB.AddForce(movement * Vector2.right);
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetAxisRaw("Horizontal") < 0)
         {
             spriteRenderer.flipX = spriteRenderer.flipX;
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
             spriteRenderer.flipX = spriteRenderer.flipX;
             transform.localScale = new Vector3(1, 1, 1);
