@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
     public Sprite originalSprite;
     private bool isSprite1Active = true;
     private float switchInterval = 0.50f;
-    private bool isAttacking;
+    public bool isAttacking;
 
 
     void Start()

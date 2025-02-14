@@ -32,6 +32,7 @@ public class Player2Input : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite sprite3;
     public Sprite sprite4;
+    public Sprite hsprite2;
     private bool isSprite1Active = true;
     private float switchInterval = 0.50f;
     //Interacting
@@ -42,6 +43,7 @@ public class Player2Input : MonoBehaviour
     public int playerHealth = 10;
 
     public static PlayerInput p1;
+    public Player2Attack p2Attack;
 
     private void Awake()
     {
@@ -54,6 +56,12 @@ public class Player2Input : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        /*if (isHammerHeld == true)
+        {
+            spriteRenderer.sprite = hsprite2;
+        }*/
+
         //interaction
         if (Input.GetButtonDown("P2 Fire1") && canInteract)
         {
@@ -92,7 +100,7 @@ public class Player2Input : MonoBehaviour
         //move character P2 Horizontally
         playerRB.AddForce(movement * Vector2.right);
         //flip sprite
-        if (Input.GetAxisRaw("P2 Horizontal") < 0)
+        /*if (Input.GetAxisRaw("P2 Horizontal") < 0)
         {
             spriteRenderer.flipX = spriteRenderer.flipX;
             transform.localScale = new Vector3(-1, 1, 1);
@@ -102,11 +110,44 @@ public class Player2Input : MonoBehaviour
         {
             spriteRenderer.flipX = spriteRenderer.flipX;
             transform.localScale = new Vector3(1, 1, 1);
+        }*/
+
+        if (Input.GetAxisRaw("P2 Horizontal") > 0 && isHammerHeld == false)
+        {
+            spriteRenderer.flipX = spriteRenderer.flipX;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (Input.GetAxisRaw("P2 Horizontal") < 0 && isHammerHeld == false)
+        {
+            spriteRenderer.flipX = spriteRenderer.flipX;
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        /*else if (Input.GetAxisRaw("Horizontal") < 0 && isHammerHeld == true)
+         {
+             spriteRenderer.sprite = hsprite1;
+             spriteRenderer.flipX = spriteRenderer.flipX;
+             transform.localScale = new Vector3(-1, 1, 1);
+         }*/
+        else if (Input.GetAxisRaw("P2 Horizontal") < 0 && isHammerHeld == true && !p2Attack.isAttacking)
+        {
+            spriteRenderer.sprite = hsprite2;
+            spriteRenderer.flipX = spriteRenderer.flipX;
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        /*else if (Input.GetAxisRaw("Horizontal") > 0 && isHammerHeld == true)
+        {
+            spriteRenderer.sprite = hsprite1;
+            spriteRenderer.flipX = spriteRenderer.flipX;
+            transform.localScale = new Vector3(1, 1, 1);
+        }*/
+        else if (Input.GetAxisRaw("P2 Horizontal") > 0 && isHammerHeld == true && !p2Attack.isAttacking)
+        {
+            spriteRenderer.sprite = hsprite2;
+            spriteRenderer.flipX = spriteRenderer.flipX;
+            transform.localScale = new Vector3(1, 1, 1);
         }
 
-
-
-        if (playerRB.velocity.x < 0f)
+        if (playerRB.velocity.x < 0f && isHammerHeld == false)
         {
             if (Time.time > switchInterval)
             {
@@ -125,7 +166,7 @@ public class Player2Input : MonoBehaviour
                 switchInterval += 0.50f; // Reset the switch timer
             }
         }
-        if (playerRB.velocity.x > 0f)
+        if (playerRB.velocity.x > 0f && isHammerHeld == false)
         {
             if (Time.time > switchInterval)
             {
