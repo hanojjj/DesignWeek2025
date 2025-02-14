@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class playSound : MonoBehaviour
 {
+
+    public PlayerInput thisPlayer;
+
+
     public AudioSource jump;
     public AudioSource kick;
+    public AudioSource hammer;
+
 
     void Start()
     {
@@ -20,9 +26,14 @@ public class playSound : MonoBehaviour
             PlayJump();
         }
 
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && thisPlayer.isHammerHeld == false)
         {
             PlayKick();
+        }
+
+        if (Input.GetButtonDown("Fire2") && thisPlayer.isHammerHeld == true)
+        {
+            PlayHammer();
         }
 
     }
@@ -42,6 +53,15 @@ public class playSound : MonoBehaviour
         if (kick != null)
         {
             kick.Play();
+        }
+    }
+
+    void PlayHammer()
+    {
+        // Play the audio clip assigned to the AudioSource
+        if (hammer != null)
+        {
+            hammer.Play();
         }
     }
 }
