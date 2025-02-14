@@ -18,6 +18,6 @@ public class start : MonoBehaviour
     // Update is called once per frame
     void playGame()
     {
-        SceneManager.LoadScene(gameScene);
+        SceneManager.LoadScene("Level 1");
     }
 }
