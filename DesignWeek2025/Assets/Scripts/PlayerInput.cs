@@ -172,6 +172,7 @@ public class PlayerInput : MonoBehaviour
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * (1 - variableJumpHeight));
             coyoteTimeCounter = 0f;
+            
         }
 
         //fall gravity
@@ -204,6 +205,7 @@ public class PlayerInput : MonoBehaviour
             return false;
         }
     }
+
 
     public void OnDrawGizmos()
     {

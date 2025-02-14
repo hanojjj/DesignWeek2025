@@ -30,6 +30,10 @@ public class Player2Input : MonoBehaviour
     private float jumpBufferCounter;
     //Sprite Renderer
     private SpriteRenderer spriteRenderer;
+    public Sprite sprite3;
+    public Sprite sprite4;
+    private bool isSprite1Active = true;
+    private float switchInterval = 0.50f;
     //Interacting
     bool canInteract;
     public static GameObject hammer;
@@ -88,15 +92,58 @@ public class Player2Input : MonoBehaviour
         //move character P2 Horizontally
         playerRB.AddForce(movement * Vector2.right);
         //flip sprite
+        if (Input.GetKey(KeyCode.A))
+        {
+            spriteRenderer.flipX = spriteRenderer.flipX;
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            spriteRenderer.flipX = spriteRenderer.flipX;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+
+
         if (playerRB.velocity.x < 0f)
         {
-            spriteRenderer.flipX = true;
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (Time.time > switchInterval)
+            {
+
+                isSprite1Active = !isSprite1Active;
+
+                if (isSprite1Active)
+                {
+                    spriteRenderer.sprite = sprite3;
+                }
+                else
+                {
+                    spriteRenderer.sprite = sprite4;
+                }
+
+                switchInterval += 0.50f; // Reset the switch timer
+            }
         }
         if (playerRB.velocity.x > 0f)
         {
-            spriteRenderer.flipX = false;
-            transform.localScale = new Vector3(1, 1, 1);
+            if (Time.time > switchInterval)
+            {
+
+
+                isSprite1Active = !isSprite1Active;
+
+                if (isSprite1Active)
+                {
+                    spriteRenderer.sprite = sprite3;
+                }
+                else
+                {
+                    spriteRenderer.sprite = sprite4;
+                }
+
+                switchInterval += 0.50f; // Reset the switch timer
+            }
         }
         //Jump
         if (isGrounded())

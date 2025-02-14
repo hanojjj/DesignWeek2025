@@ -79,11 +79,11 @@ public class PlayerAttack : MonoBehaviour
 
             if (Input.GetButtonDown("Fire2") && thisPlayer.isHammerHeld == true)
             {
-                StartCoroutine(AttackWithHammer());
+                StartCoroutine(AttackWithHammerP1());
             }
             else if (Input.GetButtonDown("Fire2") && thisPlayer.isHammerHeld == false)
             {
-                StartCoroutine(AttackWithoutHammer());
+                StartCoroutine(AttackWithoutHammerP1());
             }
 
 
@@ -98,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
-    private IEnumerator AttackWithHammer()
+    private IEnumerator AttackWithHammerP1()
     {
         isAttacking = true;
 
@@ -116,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = false;
     }
 
-    private IEnumerator AttackWithoutHammer()
+    private IEnumerator AttackWithoutHammerP1()
     {
         isAttacking = true;
 

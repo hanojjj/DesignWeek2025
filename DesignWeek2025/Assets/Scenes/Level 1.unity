@@ -1031,6 +1031,30 @@ PrefabInstance:
       propertyPath: sprite2
       value: 
       objectReference: {fileID: 21300000, guid: e687242ee27c54e0dbe9b521194b446c, type: 3}
+    - target: {fileID: 3242541689668264244, guid: 6bf93645dc260254e99e5da2283adeb0, type: 3}
+      propertyPath: spriteJump
+      value: 
+      objectReference: {fileID: 21300000, guid: 3569c3d3db48148cfb99575f71c966a9, type: 3}
+    - target: {fileID: 3242541689668264244, guid: 6bf93645dc260254e99e5da2283adeb0, type: 3}
+      propertyPath: originalSprite3
+      value: 
+      objectReference: {fileID: 21300000, guid: 514449304586e45feaac2c9229769de3, type: 3}
+    - target: {fileID: 4327518171391571955, guid: 6bf93645dc260254e99e5da2283adeb0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327518171391571955, guid: 6bf93645dc260254e99e5da2283adeb0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371294799694167949, guid: 6bf93645dc260254e99e5da2283adeb0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371294799694167949, guid: 6bf93645dc260254e99e5da2283adeb0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7036217500777111905, guid: 6bf93645dc260254e99e5da2283adeb0, type: 3}
       propertyPath: attackSprite1
       value: 
@@ -1311,6 +1335,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestPlayer2
       objectReference: {fileID: 0}
+    - target: {fileID: 259065199861421402, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 259065199861421402, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396443279859045264, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396443279859045264, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151236763823816868, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 514449304586e45feaac2c9229769de3, type: 3}
+    - target: {fileID: 4151236763823816868, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151236763823816868, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151236763823816868, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4151236763823816868, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -1355,6 +1411,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8418494290440564011, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: sprite1
+      value: 
+      objectReference: {fileID: 21300000, guid: 514449304586e45feaac2c9229769de3, type: 3}
+    - target: {fileID: 8418494290440564011, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: sprite2
+      value: 
+      objectReference: {fileID: 21300000, guid: e687242ee27c54e0dbe9b521194b446c, type: 3}
+    - target: {fileID: 8418494290440564011, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: sprite3
+      value: 
+      objectReference: {fileID: 21300000, guid: 514449304586e45feaac2c9229769de3, type: 3}
+    - target: {fileID: 8418494290440564011, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: sprite4
+      value: 
+      objectReference: {fileID: 21300000, guid: e687242ee27c54e0dbe9b521194b446c, type: 3}
+    - target: {fileID: 9049609511892839434, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: attackSprite3
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b79c329ff5eb4790b4d56cd72dcd82e, type: 3}
+    - target: {fileID: 9049609511892839434, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: attackSprite4
+      value: 
+      objectReference: {fileID: 21300000, guid: ca3609f9509cf49db8f064044c834ea1, type: 3}
+    - target: {fileID: 9049609511892839434, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: originalSprite2
+      value: 
+      objectReference: {fileID: 21300000, guid: 514449304586e45feaac2c9229769de3, type: 3}
+    - target: {fileID: 9049609511892839434, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: attackHammerSprite3
+      value: 
+      objectReference: {fileID: 21300000, guid: 73565b5d6704e437681ec1544f0b3cd9, type: 3}
+    - target: {fileID: 9049609511892839434, guid: 1b40659ee380e3542aa93411d74b04aa, type: 3}
+      propertyPath: attackHammerSprite4
+      value: 
+      objectReference: {fileID: 21300000, guid: fb390523448d24532ae78df9bec6fa09, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
