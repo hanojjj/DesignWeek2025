@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGame: {fileID: 117586923}
-  gameScene: SampleScene
+  gameScene: Level 1
 --- !u!1 &231243840
 GameObject:
   m_ObjectHideFlags: 0
