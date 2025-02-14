@@ -9,15 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Screen.unity
     guid: 22447f0f7e5fb9c4597cce856acd8f65
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 51855d79edee25343a527d718d7fecdc
-  - enabled: 1
-    path: Assets/Scenes/TestDraw.unity
-    guid: 7be0369621d6f7642a84db0448734e8d
-  - enabled: 1
     path: Assets/Scenes/TestVictory1.unity
     guid: 31811e05e31fed548a8dabccadce008b
   - enabled: 1
     path: Assets/Scenes/TestVictory2.unity
     guid: 8291551bb4c303d47b37186c02461f82
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 51855d79edee25343a527d718d7fecdc
   m_configObjects: {}
