@@ -86,22 +86,6 @@ public class PlayerInput : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         //move character horizontally
         playerRB.AddForce(movement * Vector2.right);
-<<<<<<< Updated upstream:DesignWeek2025/Assets/PlayerInput.cs
-=======
-
-        if (Input.GetAxisRaw("Horizontal") < 0)
-        {
-            spriteRenderer.flipX = spriteRenderer.flipX;
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            spriteRenderer.flipX = spriteRenderer.flipX;
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-
->>>>>>> Stashed changes:DesignWeek2025/Assets/Scripts/PlayerInput.cs
         //flip sprite
         if (playerRB.velocity.x < 0f)
         {
